@@ -1,0 +1,59 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - CSV green colors -->
+    <linearGradient id="csvGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#81C784;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#66BB6A;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#43A047;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="csvCornerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="csvBodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="csvBadgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- File corner fold (elevation 2px scaled) -->
+  <g filter="url(#csvCornerShadow)">
+    <path d="M56 0 L96 40 L96 96 L0 96 L0 0 Z" fill="url(#csvGradient)" />
+    <!-- Corner fold -->
+    <path d="M56 0 L56 40 L96 40" fill="#1B5E20" />
+    <!-- Fold highlight -->
+    <path d="M56 0 L56 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+    <!-- Corner highlight -->
+    <path d="M56 0 L0 0 L0 96 L96 96 L96 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Spreadsheet grid (unique 3D element for spreadsheets) -->
+  <g transform="translate(20, 40)">
+    <!-- Header row background -->
+    <rect x="0" y="0" width="56" height="12" fill="#FFFFFF" opacity="0.9" />
+    <!-- Row backgrounds -->
+    <rect x="0" y="14" width="56" height="10" fill="#FFFFFF" opacity="0.7" />
+    <rect x="0" y="26" width="56" height="10" fill="#FFFFFF" opacity="0.7" />
+    <rect x="0" y="38" width="56" height="10" fill="#FFFFFF" opacity="0.7" />
+    <!-- Grid lines vertical -->
+    <line x1="14" y1="0" x2="14" y2="48" stroke="#66BB6A" stroke-width="2" opacity="0.5" />
+    <line x1="28" y1="0" x2="28" y2="48" stroke="#66BB6A" stroke-width="2" opacity="0.5" />
+    <line x1="42" y1="0" x2="42" y2="48" stroke="#66BB6A" stroke-width="2" opacity="0.5" />
+    <!-- Grid lines horizontal -->
+    <line x1="0" y1="12" x2="56" y2="12" stroke="#66BB6A" stroke-width="2" opacity="0.5" />
+    <line x1="0" y1="24" x2="56" y2="24" stroke="#66BB6A" stroke-width="2" opacity="0.5" />
+    <line x1="0" y1="36" x2="56" y2="36" stroke="#66BB6A" stroke-width="2" opacity="0.5" />
+    <!-- Border -->
+    <rect x="0" y="0" width="56" height="48" stroke="#66BB6A" stroke-width="2" fill="none" />
+  </g>
+  
+  <!-- Floating badge with CSV text (elevation 1px scaled) -->
+  <g filter="url(#csvBadgeShadow)">
+    <rect x="24" y="8" width="36" height="16" rx="4" fill="#1B5E20" />
+    <text x="42" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">CSV</text>
+  </g>
+</svg>

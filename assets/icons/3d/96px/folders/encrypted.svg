@@ -1,0 +1,53 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - Encrypted folder (purple) -->
+    <linearGradient id="encryptedFolderGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B1FA2;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#8E24AA;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8E24AA;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="encryptedTabShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="encryptedBodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Folder tab (elevation 2px scaled) -->
+  <g filter="url(#encryptedTabShadow)">
+    <path d="M8 8 L40 8 L48 24 L88 24 L88 88 L8 88 Z" fill="url(#encryptedFolderGradient)" />
+    <!-- Tab highlight -->
+    <path d="M8 8 L40 8 L48 24" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+    <!-- Top edge highlight -->
+    <path d="M48 24 L88 24" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folder front (elevation 4px scaled) -->
+  <g filter="url(#encryptedBodyShadow)">
+    <!-- Main folder body -->
+    <path d="M8 24 L88 24 L88 88 L8 88 Z" fill="url(#encryptedFolderGradient)" />
+    <!-- Fold on right side -->
+    <path d="M88 24 L88 88 L48 88 L48 24 L88 24" fill="#9C27B0" />
+    <!-- Fold highlight -->
+    <path d="M48 24 L48 88" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+    <!-- Bottom edge highlight -->
+    <path d="M8 88 L88 88" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+    <!-- Left edge highlight -->
+    <path d="M8 24 L8 88" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Padlock icon (elevated, floating) -->
+  <g transform="translate(36, 40)">
+    <!-- Lock body -->
+    <rect x="0" y="16" width="24" height="20" rx="3" fill="#E1BEE7" stroke="#7B1FA2" stroke-width="2" />
+    <!-- Lock shackle -->
+    <path d="M6 16 L6 10 A6 6 0 0 1 18 10 L18 16" stroke="#E1BEE7" stroke-width="4" fill="none" stroke-linecap="round" />
+    <!-- Lock keyhole -->
+    <circle cx="12" cy="26" r="3" fill="#7B1FA2" />
+    <path d="M12 26 L12 32" stroke="#7B1FA2" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>

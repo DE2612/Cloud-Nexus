@@ -1,0 +1,58 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - Spreadsheet colors -->
+    <linearGradient id="odsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#66BB6A;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#388E3C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B5E20;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="5.34" stdDeviation="10.67" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2.67" dy="2.67" stdDeviation="5.33" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1.33" stdDeviation="2.67" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M10.67 5.33 L37.33 5.33 L53.33 21.33 L53.33 58.67 L10.67 58.67 Z" fill="url(#odsGradient)" />
+    <!-- Body highlight -->
+    <path d="M10.67 5.33 L37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" fill="#388E3C" />
+    <!-- Fold highlight -->
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Spreadsheet grid (unique element for Spreadsheets) -->
+  <g transform="translate(18.67, 24)">
+    <!-- Grid lines -->
+    <line x1="0" y1="5.33" x2="32" y2="5.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.8" />
+    <line x1="0" y1="10.67" x2="32" y2="10.67" stroke="#FFFFFF" stroke-width="1.33" opacity="0.8" />
+    <line x1="0" y1="16" x2="32" y2="16" stroke="#FFFFFF" stroke-width="1.33" opacity="0.8" />
+    <line x1="0" y1="21.33" x2="32" y2="21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.8" />
+    <line x1="10.67" y1="0" x2="10.67" y2="26.67" stroke="#FFFFFF" stroke-width="1.33" opacity="0.8" />
+    <line x1="21.33" y1="0" x2="21.33" y2="26.67" stroke="#FFFFFF" stroke-width="1.33" opacity="0.8" />
+    <!-- Corner highlight -->
+    <rect x="0" y="0" width="10.67" height="5.33" fill="#FFFFFF" opacity="0.2" />
+  </g>
+  
+  <!-- Floating ODS badge (unique element for ODS) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="32" y="8" width="13.33" height="8" rx="2.67" fill="#FFFFFF" opacity="0.9" />
+    <text x="38.67" y="14.67" text-anchor="middle" fill="#388E3C" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="6.13">ODS</text>
+  </g>
+</svg>

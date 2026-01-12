@@ -1,0 +1,57 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - APP colors -->
+    <linearGradient id="appGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#81D4FA;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#29B6F6;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#0288D1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#01579B;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M8 4 L28 4 L40 16 L40 44 L8 44 Z" fill="url(#appGradient)" />
+    <!-- Body highlight -->
+    <path d="M8 4 L28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M28 4 L28 16 L40 16" fill="#0288D1" />
+    <!-- Fold highlight -->
+    <path d="M28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Application icon (scaled) -->
+  <g transform="translate(10, 18)">
+    <!-- App window -->
+    <rect x="4" y="4" width="20" height="16" rx="2" stroke="#FFFFFF" fill="none" stroke-width="1.5" opacity="0.8" />
+    <!-- App window header -->
+    <rect x="5" y="5" width="18" height="3" rx="1" stroke="#FFFFFF" fill="none" stroke-width="1" opacity="0.6" />
+    <!-- App window content lines -->
+    <line x1="6" y1="11" x2="16" y2="11" stroke="#FFFFFF" stroke-width="1" opacity="0.6" />
+    <line x1="6" y1="14" x2="18" y2="14" stroke="#FFFFFF" stroke-width="1" opacity="0.6" />
+    <line x1="6" y1="17" x2="14" y2="17" stroke="#FFFFFF" stroke-width="1" opacity="0.6" />
+  </g>
+  
+  <!-- Floating APP badge (scaled) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="25" y="6" width="12" height="6" rx="2" fill="#FFFFFF" opacity="0.9" />
+    <text x="31" y="11" text-anchor="middle" fill="#01579B" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="4">APP</text>
+  </g>
+</svg>

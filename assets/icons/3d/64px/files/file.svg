@@ -1,0 +1,43 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - Default file gray colors -->
+    <linearGradient id="fileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9E9E9E;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#757575;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#616161;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#424242;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="5.34" stdDeviation="10.67" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2.67" dy="2.67" stdDeviation="5.33" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M10.67 5.33 L37.33 5.33 L53.33 21.33 L53.33 58.67 L10.67 58.67 Z" fill="url(#fileGradient)" />
+    <!-- Body highlight -->
+    <path d="M10.67 5.33 L37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" fill="#616161" />
+    <!-- Fold highlight -->
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Generic document lines (unique element for default file) -->
+  <g transform="translate(18.67, 24)">
+    <!-- Text lines -->
+    <line x1="0" y1="2.67" x2="26.67" y2="2.67" stroke="#FFFFFF" stroke-width="1.33" opacity="0.8" />
+    <line x1="0" y1="8" x2="21.33" y2="8" stroke="#FFFFFF" stroke-width="1.33" opacity="0.6" />
+    <line x1="0" y1="13.33" x2="26.67" y2="13.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.6" />
+    <line x1="0" y1="18.67" x2="16" y2="18.67" stroke="#FFFFFF" stroke-width="1.33" opacity="0.6" />
+    <line x1="0" y1="24" x2="21.33" y2="24" stroke="#FFFFFF" stroke-width="1.33" opacity="0.6" />
+  </g>
+</svg>

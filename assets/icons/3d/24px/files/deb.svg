@@ -1,0 +1,58 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - DEB colors -->
+    <linearGradient id="debGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFCC80;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#FFB74D;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#FFA726;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FB8C00;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0.5" stdDeviation="1" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M4 2 L14 2 L20 8 L20 22 L4 22 Z" fill="url(#debGradient)" />
+    <!-- Body highlight -->
+    <path d="M4 2 L14 2 L14 8 L20 8" stroke="#FFFFFF" stroke-width="0.5" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px) -->
+  <g filter="url(#foldShadow)">
+    <path d="M14 2 L14 8 L20 8" fill="#FFA726" />
+    <!-- Fold highlight -->
+    <path d="M14 2 L14 8 L20 8" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Gear/cogwheel icon (unique element for executables) -->
+  <g transform="translate(12, 12)">
+    <!-- Outer gear ring -->
+    <circle cx="0" cy="0" r="4" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.9" />
+    <!-- Gear teeth -->
+    <line x1="0" y1="-4" x2="0" y2="-5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.9" />
+    <line x1="0" y1="4" x2="0" y2="5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.9" />
+    <line x1="-4" y1="0" x2="-5" y2="0" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.9" />
+    <line x1="4" y1="0" x2="5" y2="0" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.9" />
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="1.5" fill="#FFFFFF" opacity="0.8" />
+  </g>
+  
+  <!-- Floating DEB badge (unique element for DEB) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="13" y="3" width="6" height="3" rx="1" fill="#FFFFFF" opacity="0.9" />
+    <text x="16" y="5.5" text-anchor="middle" fill="#FFB74D" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="2.3">DEB</text>
+  </g>
+</svg>

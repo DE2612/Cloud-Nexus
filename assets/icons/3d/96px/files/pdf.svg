@@ -1,0 +1,47 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - PDF red colors -->
+    <linearGradient id="pdfGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF5350;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#F44336;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#E53935;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C62828;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="pdfCornerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="pdfBodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="pdfBadgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- File corner fold (elevation 2px scaled) -->
+  <g filter="url(#pdfCornerShadow)">
+    <path d="M56 0 L96 40 L96 96 L0 96 L0 0 Z" fill="url(#pdfGradient)" />
+    <!-- Corner fold -->
+    <path d="M56 0 L56 40 L96 40" fill="#B71C1C" />
+    <!-- Fold highlight -->
+    <path d="M56 0 L56 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+    <!-- Corner highlight -->
+    <path d="M56 0 L0 0 L0 96 L96 96 L96 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- PDF text lines -->
+  <g fill="#FFFFFF" opacity="0.6">
+    <rect x="16" y="40" width="48" height="4" rx="2" />
+    <rect x="16" y="52" width="64" height="4" rx="2" />
+    <rect x="16" y="64" width="56" height="4" rx="2" />
+    <rect x="16" y="76" width="40" height="4" rx="2" />
+  </g>
+  
+  <!-- Floating badge with PDF text (elevation 1px scaled) -->
+  <g filter="url(#pdfBadgeShadow)">
+    <rect x="20" y="8" width="32" height="16" rx="4" fill="#B71C1C" />
+    <text x="36" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">PDF</text>
+  </g>
+</svg>

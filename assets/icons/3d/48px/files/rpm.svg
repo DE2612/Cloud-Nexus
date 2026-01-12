@@ -1,0 +1,62 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - RPM colors (similar to exe) -->
+    <linearGradient id="rpmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B0BEC5;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#90A4AE;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#78909C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#546E7A;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M8 4 L28 4 L40 16 L40 44 L8 44 Z" fill="url(#rpmGradient)" />
+    <!-- Body highlight -->
+    <path d="M8 4 L28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M28 4 L28 16 L40 16" fill="#78909C" />
+    <!-- Fold highlight -->
+    <path d="M28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Gear/cogwheel icon (scaled) -->
+  <g transform="translate(10, 18)" stroke="#FFFFFF" fill="none" stroke-width="1.5" opacity="0.8">
+    <!-- Outer circle -->
+    <circle cx="14" cy="12" r="6" />
+    <!-- Gear teeth -->
+    <line x1="14" y1="4" x2="14" y2="6" />
+    <line x1="14" y1="18" x2="14" y2="20" />
+    <line x1="6" y1="12" x2="8" y2="12" />
+    <line x1="20" y1="12" x2="22" y2="12" />
+    <line x1="8.5" y1="6.5" x2="10" y2="8" />
+    <line x1="18" y1="16" x2="19.5" y2="17.5" />
+    <line x1="8.5" y1="17.5" x2="10" y2="16" />
+    <line x1="18" y1="8" x2="19.5" y2="6.5" />
+    <!-- Center circle -->
+    <circle cx="14" cy="12" r="2" stroke-width="1.5" />
+  </g>
+  
+  <!-- Floating RPM badge (scaled) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="25" y="6" width="12" height="6" rx="2" fill="#FFFFFF" opacity="0.9" />
+    <text x="31" y="11" text-anchor="middle" fill="#546E7A" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="4">RPM</text>
+  </g>
+</svg>

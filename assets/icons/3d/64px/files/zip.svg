@@ -1,0 +1,56 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - ZIP colors -->
+    <linearGradient id="zipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE0B2;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#FFCC80;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#FFB74D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F57C00;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="5.34" stdDeviation="10.67" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2.67" dy="2.67" stdDeviation="5.33" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1.33" stdDeviation="2.67" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M10.67 5.33 L37.33 5.33 L53.33 21.33 L53.33 58.67 L10.67 58.67 Z" fill="url(#zipGradient)" />
+    <!-- Body highlight -->
+    <path d="M10.67 5.33 L37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" fill="#FFB74D" />
+    <!-- Fold highlight -->
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Zipper (unique element for Archive files) -->
+  <g transform="translate(26.67, 26.67)">
+    <!-- Zipper teeth -->
+    <rect x="0" y="0" width="10.67" height="2.67" fill="#FFFFFF" opacity="0.5" />
+    <rect x="0" y="5.33" width="10.67" height="2.67" fill="#FFFFFF" opacity="0.5" />
+    <rect x="0" y="10.67" width="10.67" height="2.67" fill="#FFFFFF" opacity="0.5" />
+    <rect x="0" y="16" width="10.67" height="2.67" fill="#FFFFFF" opacity="0.5" />
+    <!-- Zipper pull -->
+    <rect x="3.33" y="2.67" width="4" height="13.33" fill="#FFFFFF" opacity="0.7" />
+  </g>
+  
+  <!-- Floating ZIP badge (unique element for ZIP) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="32" y="8" width="16" height="8" rx="2.67" fill="#FFFFFF" opacity="0.9" />
+    <text x="40" y="14.67" text-anchor="middle" fill="#FFB74D" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="6.13">ZIP</text>
+  </g>
+</svg>

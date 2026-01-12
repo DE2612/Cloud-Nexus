@@ -1,0 +1,46 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - JPG purple/pink colors -->
+    <linearGradient id="jpgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#BA68C8;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#7B1FA2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A148C;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="jpgCornerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="jpgBodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="jpgBadgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- File corner fold (elevation 2px scaled) -->
+  <g filter="url(#jpgCornerShadow)">
+    <path d="M56 0 L96 40 L96 96 L0 96 L0 0 Z" fill="url(#jpgGradient)" />
+    <!-- Corner fold -->
+    <path d="M56 0 L56 40 L96 40" fill="#4A0072" />
+    <!-- Fold highlight -->
+    <path d="M56 0 L56 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+    <!-- Corner highlight -->
+    <path d="M56 0 L0 0 L0 96 L96 96 L96 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Image placeholder frame -->
+  <rect x="16" y="40" width="64" height="48" rx="4" fill="#FFFFFF" opacity="0.3" />
+  
+  <!-- Simple mountain icon -->
+  <path d="M20 76 L36 56 L48 68 L56 60 L76 76 Z" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="68" cy="52" r="8" fill="#FFFFFF" opacity="0.7" />
+  
+  <!-- Floating badge with JPG text (elevation 1px scaled) -->
+  <g filter="url(#jpgBadgeShadow)">
+    <rect x="20" y="8" width="36" height="16" rx="4" fill="#4A0072" />
+    <text x="38" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">JPG</text>
+  </g>
+</svg>

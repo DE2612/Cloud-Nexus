@@ -1,0 +1,54 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - Executable colors -->
+    <linearGradient id="exeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C4DFF;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#651FFF;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#311B92;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000051;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="5.34" stdDeviation="10.67" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2.67" dy="2.67" stdDeviation="5.33" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1.33" stdDeviation="2.67" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M10.67 5.33 L37.33 5.33 L53.33 21.33 L53.33 58.67 L10.67 58.67 Z" fill="url(#exeGradient)" />
+    <!-- Body highlight -->
+    <path d="M10.67 5.33 L37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" fill="#311B92" />
+    <!-- Fold highlight -->
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Gear/Settings (unique element for Executable files) -->
+  <g transform="translate(22.67, 26.67)">
+    <circle cx="9.33" cy="10.67" r="4" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.7" />
+    <line x1="9.33" y1="2.67" x2="9.33" y2="5.33" stroke="#FFFFFF" stroke-width="2" opacity="0.7" stroke-linecap="round" />
+    <line x1="9.33" y1="16" x2="9.33" y2="18.67" stroke="#FFFFFF" stroke-width="2" opacity="0.7" stroke-linecap="round" />
+    <line x1="1.33" y1="10.67" x2="4" y2="10.67" stroke="#FFFFFF" stroke-width="2" opacity="0.7" stroke-linecap="round" />
+    <line x1="14.67" y1="10.67" x2="17.33" y2="10.67" stroke="#FFFFFF" stroke-width="2" opacity="0.7" stroke-linecap="round" />
+  </g>
+  
+  <!-- Floating EXE badge (unique element for EXE) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="30.67" y="8" width="16" height="8" rx="2.67" fill="#FFFFFF" opacity="0.9" />
+    <text x="38.67" y="14.67" text-anchor="middle" fill="#311B92" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="6.13">EXE</text>
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+<!-- 3D Material Design File Icon Template - 64px -->
+<!-- Usage: Replace STOP0, STOP1, STOP2, STOP3 with your category colors -->
+<!-- Replace LABEL with your file type label (e.g., PDF, JPG, etc.) -->
+<!-- Add category-specific elements in the middle layer -->
+
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth -->
+    <linearGradient id="baseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#STOP0;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#STOP1;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#STOP2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#STOP3;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Middle layer gradient (slightly lighter for depth) -->
+    <linearGradient id="middleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#STOP0;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#STOP1;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <!-- Top layer gradient (lightest for floating effect) -->
+    <linearGradient id="topGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#STOP0;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#STOP1;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="baseShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="middleShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="topShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Base Layer (elevation 4px) -->
+  <g filter="url(#baseShadow)">
+    <!-- Main file shape with rounded corners -->
+    <rect x="5" y="5" width="54" height="54" rx="8" ry="8" fill="url(#baseGradient)" />
+    
+    <!-- Folded corner effect (top-right) -->
+    <path d="M40 5 L59 24 L40 24 Z" fill="#STOP0" opacity="0.6" />
+    <line x1="40" y1="5" x2="40" y2="24" stroke="#STOP3" stroke-width="1.5" opacity="0.3" />
+    <line x1="40" y1="24" x2="59" y2="24" stroke="#STOP3" stroke-width="1.5" opacity="0.3" />
+  </g>
+  
+  <!-- Middle Layer (elevation 2px) -->
+  <g filter="url(#middleShadow)">
+    <!-- Add category-specific elements here -->
+    <!-- Example: Text lines for documents -->
+    <rect x="13" y="27" width="22" height="2.5" rx="1.25" fill="#FFFFFF" opacity="0.4" />
+    <rect x="13" y="32" width="28" height="2.5" rx="1.25" fill="#FFFFFF" opacity="0.3" />
+    <rect x="13" y="37" width="20" height="2.5" rx="1.25" fill="#FFFFFF" opacity="0.3" />
+  </g>
+  
+  <!-- Top Layer (elevation 1px) -->
+  <g filter="url(#topShadow)">
+    <!-- File type label centered -->
+    <text x="32" y="43" text-anchor="middle" fill="#FFFFFF" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="16">LABEL</text>
+    
+    <!-- Add floating category-specific elements here -->
+    <!-- Example: Floating badge for special file types -->
+  </g>
+</svg>

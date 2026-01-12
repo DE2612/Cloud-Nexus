@@ -1,0 +1,54 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - Code colors -->
+    <linearGradient id="htmlGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E65100;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#EF6C00;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#F57C00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF6C00;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="htmlCornerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="htmlBodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="htmlBadgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- File corner fold (elevation 2px scaled) -->
+  <g filter="url(#htmlCornerShadow)">
+    <path d="M56 0 L96 40 L96 96 L0 96 L0 0 Z" fill="url(#htmlGradient)" />
+    <!-- Corner fold -->
+    <path d="M56 0 L56 40 L96 40" fill="#E65100" />
+    <!-- Fold highlight -->
+    <path d="M56 0 L56 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+    <!-- Corner highlight -->
+    <path d="M56 0 L0 0 L0 96 L96 96 L96 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- HTML angle brackets (unique 3D element for code/markup) -->
+  <g transform="translate(20, 28)">
+    <!-- Left bracket -->
+    <path d="M24 8 L8 26 L24 44" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Right bracket -->
+    <path d="M40 8 L56 26 L40 44" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Slash -->
+    <line x1="32" y1="8" x2="48" y2="44" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+    
+    <!-- Small dots for code style -->
+    <circle cx="8" cy="52" r="2" fill="#FFFFFF" opacity="0.6" />
+    <circle cx="16" cy="52" r="2" fill="#FFFFFF" opacity="0.6" />
+    <circle cx="24" cy="52" r="2" fill="#FFFFFF" opacity="0.6" />
+  </g>
+  
+  <!-- Floating badge with HTML text (elevation 1px scaled) -->
+  <g filter="url(#htmlBadgeShadow)">
+    <rect x="24" y="8" width="48" height="16" rx="4" fill="#EF6C00" />
+    <text x="48" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">HTML</text>
+  </g>
+</svg>

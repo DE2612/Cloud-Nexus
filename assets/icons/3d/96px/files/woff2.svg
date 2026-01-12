@@ -1,0 +1,47 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - WOFF2 font colors -->
+    <linearGradient id="woff2Gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#CE93D8;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#AB47BC;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#8E24AA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6A1B9A;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="woff2CornerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="woff2BodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="woff2BadgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- File corner fold (elevation 2px scaled) -->
+  <g filter="url(#woff2CornerShadow)">
+    <path d="M56 0 L96 40 L96 96 L0 96 L0 0 Z" fill="url(#woff2Gradient)" />
+    <!-- Corner fold -->
+    <path d="M56 0 L56 40 L96 40" fill="#4A148C" />
+    <!-- Fold highlight -->
+    <path d="M56 0 L56 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+    <!-- Corner highlight -->
+    <path d="M56 0 L0 0 L0 96 L96 96 L96 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Letter "A" (unique 3D element for fonts) -->
+  <g transform="translate(24, 32)">
+    <!-- Main letter A -->
+    <text x="28" y="48" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF" opacity="0.9" text-anchor="middle">A</text>
+    <!-- Letter outline -->
+    <text x="28" y="48" font-family="Arial, sans-serif" font-size="48" font-weight="bold" stroke="#AB47BC" stroke-width="2" fill="none" opacity="0.7" text-anchor="middle">A</text>
+  </g>
+  
+  <!-- Floating badge with WOFF2 text (elevation 1px scaled) -->
+  <g filter="url(#woff2BadgeShadow)">
+    <rect x="16" y="8" width="56" height="16" rx="4" fill="#4A148C" />
+    <text x="44" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">WOFF2</text>
+  </g>
+</svg>

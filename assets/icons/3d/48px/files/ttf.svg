@@ -1,0 +1,59 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - TTF colors -->
+    <linearGradient id="ttfGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF9C4;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#FFF59D;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#FFF176;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFEE58;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M8 4 L28 4 L40 16 L40 44 L8 44 Z" fill="url(#ttfGradient)" />
+    <!-- Body highlight -->
+    <path d="M8 4 L28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M28 4 L28 16 L40 16" fill="#FFF176" />
+    <!-- Fold highlight -->
+    <path d="M28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Typography letter "A" with depth (unique element for fonts) -->
+  <g transform="translate(24, 24)">
+    <!-- Letter A outline with shadow -->
+    <text x="0" y="8" text-anchor="middle" fill="#000000" opacity="0.2" 
+          font-family="Georgia, serif" 
+          font-weight="bold" 
+          font-size="16">A</text>
+    <!-- Letter A main -->
+    <text x="0" y="8" text-anchor="middle" fill="#333333" opacity="0.8"
+          font-family="Georgia, serif" 
+          font-weight="bold" 
+          font-size="16">A</text>
+  </g>
+  
+  <!-- Floating TTF badge (unique element for TTF) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="26" y="6" width="12" height="6" rx="2" fill="#FFFFFF" opacity="0.9" />
+    <text x="32" y="11" text-anchor="middle" fill="#FFF59D" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="4.6">TTF</text>
+  </g>
+</svg>

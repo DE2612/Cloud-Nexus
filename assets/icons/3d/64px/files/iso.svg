@@ -1,0 +1,62 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - Archive colors -->
+    <linearGradient id="isoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#90A4AE;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#607D8B;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#455A64;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#263238;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="5.34" stdDeviation="10.67" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2.67" dy="2.67" stdDeviation="5.33" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1.33" stdDeviation="2.67" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M10.67 5.33 L37.33 5.33 L53.33 21.33 L53.33 58.67 L10.67 58.67 Z" fill="url(#isoGradient)" />
+    <!-- Body highlight -->
+    <path d="M10.67 5.33 L37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" fill="#455A64" />
+    <!-- Fold highlight -->
+    <path d="M37.33 5.33 L37.33 21.33 L53.33 21.33" stroke="#FFFFFF" stroke-width="1.33" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Zipper teeth pattern (unique element for Archives) -->
+  <g transform="translate(22.67, 26.67)">
+    <!-- Vertical zipper teeth -->
+    <rect x="4" y="0" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="4" y="4" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="4" y="8" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="4" y="12" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="4" y="16" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="8" y="2.67" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="8" y="6.67" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="8" y="10.67" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="8" y="14.67" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="12" y="5.33" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="12" y="9.33" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+    <rect x="12" y="13.33" width="2.67" height="2.67" fill="#FFFFFF" opacity="0.6" rx="0.67" />
+  </g>
+  
+  <!-- Floating ISO badge (unique element for ISO) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="30.67" y="8" width="16" height="8" rx="2.67" fill="#FFFFFF" opacity="0.9" />
+    <text x="38.67" y="14.67" text-anchor="middle" fill="#455A64" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="6.13">ISO</text>
+  </g>
+</svg>

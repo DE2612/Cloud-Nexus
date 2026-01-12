@@ -1,0 +1,52 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - Root folder colors -->
+    <linearGradient id="folderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#F57C00;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#EF6C00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E65100;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Tab gradient (slightly lighter) -->
+    <linearGradient id="tabGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#F57C00;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="tabShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="indicatorShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0.5" stdDeviation="1" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Tab Layer (elevation 2px) -->
+  <g filter="url(#tabShadow)">
+    <path d="M2 6 L8 6 L10 4 L22 4 L22 8 L2 8 Z" fill="url(#tabGradient)" />
+    <!-- Tab highlight -->
+    <path d="M2 6 L8 6 L10 4 L22 4" stroke="#FFFFFF" stroke-width="0.5" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Body Layer (elevation 4px) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M2 8 L22 8 L22 20 L2 20 Z" fill="url(#folderGradient)" />
+    <!-- Body highlight -->
+    <path d="M2 8 L22 8" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Variant Indicator (elevation 1px) - Floating home icon -->
+  <g filter="url(#indicatorShadow)">
+    <!-- Home icon -->
+    <path d="M12 10 L7 14 L8 14 L8 18 L10 18 L10 15 L14 15 L14 18 L16 18 L16 14 L17 14 Z" 
+          fill="#FFFFFF" opacity="0.95" />
+    <!-- Roof -->
+    <path d="M12 10 L6 15 L7 15 L12 11 L17 15 L18 15 Z" 
+          fill="#FFFFFF" opacity="0.95" />
+  </g>
+</svg>

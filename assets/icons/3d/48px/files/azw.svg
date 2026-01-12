@@ -1,0 +1,59 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - AZW colors -->
+    <linearGradient id="azwGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3E5F5;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#E1BEE7;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#CE93D8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9C27B0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M8 4 L28 4 L40 16 L40 44 L8 44 Z" fill="url(#azwGradient)" />
+    <!-- Body highlight -->
+    <path d="M8 4 L28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M28 4 L28 16 L40 16" fill="#CE93D8" />
+    <!-- Fold highlight -->
+    <path d="M28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Book/e-book icon (unique element for E-books) -->
+  <g transform="translate(14, 20)">
+    <!-- Book spine -->
+    <rect x="0" y="0" width="2" height="16" fill="#FFFFFF" opacity="0.6" />
+    <!-- Book pages left -->
+    <rect x="2" y="0" width="8" height="16" fill="#FFFFFF" opacity="0.4" rx="1" />
+    <!-- Book pages right -->
+    <rect x="10" y="0" width="8" height="16" fill="#FFFFFF" opacity="0.4" rx="1" />
+    <!-- Book cover edge -->
+    <line x1="2" y1="0" x2="2" y2="16" stroke="#FFFFFF" stroke-width="1" opacity="0.7" />
+    <line x1="10" y1="0" x2="10" y2="16" stroke="#FFFFFF" stroke-width="1" opacity="0.7" />
+    <line x1="18" y1="0" x2="18" y2="16" stroke="#FFFFFF" stroke-width="1" opacity="0.7" />
+  </g>
+  
+  <!-- Floating AZW badge (unique element for AZW) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="27" y="6" width="11" height="6" rx="2" fill="#FFFFFF" opacity="0.9" />
+    <text x="32.5" y="11" text-anchor="middle" fill="#9C27B0" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="4.6">AZW</text>
+  </g>
+</svg>

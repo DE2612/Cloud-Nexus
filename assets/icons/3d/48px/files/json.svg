@@ -1,0 +1,62 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - JSON colors -->
+    <linearGradient id="jsonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#42A5F5;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#1E88E5;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#1976D2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="foldShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="badgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main body (elevation 4px scaled) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M8 4 L28 4 L40 16 L40 44 L8 44 Z" fill="url(#jsonGradient)" />
+    <!-- Body highlight -->
+    <path d="M8 4 L28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Folded corner (elevation 2px scaled) -->
+  <g filter="url(#foldShadow)">
+    <path d="M28 4 L28 16 L40 16" fill="#1976D2" />
+    <!-- Fold highlight -->
+    <path d="M28 4 L28 16 L40 16" stroke="#FFFFFF" stroke-width="1" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Data structure visualization (scaled) -->
+  <g transform="translate(10, 18)">
+    <!-- Brackets -->
+    <path d="M6 2 L4 2 L4 22 L6 22" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.8" />
+    <path d="M22 2 L24 2 L24 22 L22 22" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.8" />
+    
+    <!-- Key-value pairs (dots) -->
+    <circle cx="8" cy="6" r="1.5" fill="#FFFFFF" opacity="0.8" />
+    <circle cx="8" cy="12" r="1.5" fill="#FFFFFF" opacity="0.8" />
+    <circle cx="8" cy="18" r="1.5" fill="#FFFFFF" opacity="0.8" />
+    
+    <!-- Value bars -->
+    <line x1="11" y1="6" x2="20" y2="6" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6" />
+    <line x1="11" y1="12" x2="18" y2="12" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6" />
+    <line x1="11" y1="18" x2="16" y2="18" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6" />
+  </g>
+  
+  <!-- Floating JSON badge (scaled) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="25" y="6" width="13" height="6" rx="2" fill="#FFFFFF" opacity="0.9" />
+    <text x="31.5" y="11" text-anchor="middle" fill="#0D47A1" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="4">JSON</text>
+  </g>
+</svg>

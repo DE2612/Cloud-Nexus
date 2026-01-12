@@ -1,0 +1,65 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - Image colors -->
+    <linearGradient id="baseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E040FB;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#9B0086;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#7B1FA2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A148C;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Middle layer gradient -->
+    <linearGradient id="middleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E040FB;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#9B0086;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <!-- Top layer gradient -->
+    <linearGradient id="topGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E040FB;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#9B0086;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="baseShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="middleShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="topShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0.5" stdDeviation="1" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Base Layer (elevation 4px) -->
+  <g filter="url(#baseShadow)">
+    <rect x="2" y="2" width="20" height="20" rx="3" ry="3" fill="url(#baseGradient)" />
+    <!-- Picture frame effect -->
+    <rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2" />
+  </g>
+  
+  <!-- Middle Layer (elevation 2px) - Mountain/sun landscape -->
+  <g filter="url(#middleShadow)">
+    <!-- Sun -->
+    <circle cx="18" cy="7" r="2" fill="#FFFFFF" opacity="0.6" />
+    <!-- Mountain -->
+    <path d="M4 14 L10 8 L14 12 L20 6 L20 14 Z" fill="#FFFFFF" opacity="0.4" />
+    <path d="M4 14 L8 10 L12 13 L16 9 L20 13 L20 14 Z" fill="#FFFFFF" opacity="0.3" />
+  </g>
+  
+  <!-- Top Layer (elevation 1px) -->
+  <g filter="url(#topShadow)">
+    <!-- JPG label centered -->
+    <text x="12" y="17" text-anchor="middle" fill="#FFFFFF" 
+          font-family="Segoe UI, Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="6">JPG</text>
+    
+    <!-- Floating lens flare (unique element for images) -->
+    <g opacity="0.8">
+      <line x1="4" y1="4" x2="6" y2="6" stroke="#FFFFFF" stroke-width="0.5" opacity="0.6" />
+      <line x1="4.5" y1="4" x2="5.5" y2="5" stroke="#FFFFFF" stroke-width="0.3" opacity="0.8" />
+    </g>
+  </g>
+</svg>

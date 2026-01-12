@@ -1,0 +1,57 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - MOBI e-book colors -->
+    <linearGradient id="mobiGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7986CB;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#5C6BC0;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#3949AB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A237E;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="mobiCornerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="mobiBodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="mobiBadgeShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- File corner fold (elevation 2px scaled) -->
+  <g filter="url(#mobiCornerShadow)">
+    <path d="M56 0 L96 40 L96 96 L0 96 L0 0 Z" fill="url(#mobiGradient)" />
+    <!-- Corner fold -->
+    <path d="M56 0 L56 40 L96 40" fill="#283593" />
+    <!-- Fold highlight -->
+    <path d="M56 0 L56 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+    <!-- Corner highlight -->
+    <path d="M56 0 L0 0 L0 96 L96 96 L96 40" stroke="#FFFFFF" stroke-width="2" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Book with pages (unique 3D element for e-books) -->
+  <g transform="translate(20, 32)">
+    <!-- Book spine -->
+    <rect x="0" y="0" width="56" height="56" rx="2" fill="#FFFFFF" opacity="0.9" />
+    <!-- Book pages lines -->
+    <line x1="28" y1="8" x2="28" y2="48" stroke="#5C6BC0" stroke-width="2" opacity="0.4" />
+    <line x1="4" y1="16" x2="24" y2="16" stroke="#5C6BC0" stroke-width="2" opacity="0.3" />
+    <line x1="4" y1="24" x2="24" y2="24" stroke="#5C6BC0" stroke-width="2" opacity="0.3" />
+    <line x1="4" y1="32" x2="24" y2="32" stroke="#5C6BC0" stroke-width="2" opacity="0.3" />
+    <line x1="4" y1="40" x2="24" y2="40" stroke="#5C6BC0" stroke-width="2" opacity="0.3" />
+    <line x1="32" y1="16" x2="52" y2="16" stroke="#5C6BC0" stroke-width="2" opacity="0.3" />
+    <line x1="32" y1="24" x2="52" y2="24" stroke="#5C6BC0" stroke-width="2" opacity="0.3" />
+    <line x1="32" y1="32" x2="52" y2="32" stroke="#5C6BC0" stroke-width="2" opacity="0.3" />
+    <line x1="32" y1="40" x2="52" y2="40" stroke="#5C6BC0" stroke-width="2" opacity="0.3" />
+    <!-- Border -->
+    <rect x="0" y="0" width="56" height="56" rx="2" stroke="#5C6BC0" stroke-width="2" fill="none" />
+  </g>
+  
+  <!-- Floating badge with MOBI text (elevation 1px scaled) -->
+  <g filter="url(#mobiBadgeShadow)">
+    <rect x="24" y="8" width="44" height="16" rx="4" fill="#283593" />
+    <text x="46" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">MOBI</text>
+  </g>
+</svg>

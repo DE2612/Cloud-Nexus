@@ -1,0 +1,53 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 4-stop gradient for 3D depth - Shared folder colors -->
+    <linearGradient id="folderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#42A5F5;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#0078D4;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#106EBE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Tab gradient (slightly lighter) -->
+    <linearGradient id="tabGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#42A5F5;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#0078D4;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <!-- Shadow filters -->
+    <filter id="bodyShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="tabShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.20"/>
+    </filter>
+    <filter id="indicatorShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0.5" stdDeviation="1" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Tab Layer (elevation 2px) -->
+  <g filter="url(#tabShadow)">
+    <path d="M2 6 L8 6 L10 4 L22 4 L22 8 L2 8 Z" fill="url(#tabGradient)" />
+    <!-- Tab highlight -->
+    <path d="M2 6 L8 6 L10 4 L22 4" stroke="#FFFFFF" stroke-width="0.5" opacity="0.3" fill="none" />
+  </g>
+  
+  <!-- Body Layer (elevation 4px) -->
+  <g filter="url(#bodyShadow)">
+    <path d="M2 8 L22 8 L22 20 L2 20 Z" fill="url(#folderGradient)" />
+    <!-- Body highlight -->
+    <path d="M2 8 L22 8" stroke="#FFFFFF" stroke-width="0.5" opacity="0.2" fill="none" />
+  </g>
+  
+  <!-- Variant Indicator (elevation 1px) - Floating share icon -->
+  <g filter="url(#indicatorShadow)">
+    <!-- Share icon -->
+    <circle cx="12" cy="16" r="1.5" fill="#FFFFFF" opacity="0.95" />
+    <circle cx="8" cy="14" r="1.5" fill="#FFFFFF" opacity="0.95" />
+    <circle cx="16" cy="14" r="1.5" fill="#FFFFFF" opacity="0.95" />
+    <!-- Connection lines -->
+    <line x1="9" y1="14.5" x2="11" y2="15.5" stroke="#FFFFFF" stroke-width="0.8" opacity="0.95" />
+    <line x1="15" y1="14.5" x2="13" y2="15.5" stroke="#FFFFFF" stroke-width="0.8" opacity="0.95" />
+  </g>
+</svg>
